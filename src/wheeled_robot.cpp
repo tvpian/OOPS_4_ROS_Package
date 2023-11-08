@@ -1,4 +1,4 @@
-#include "../include/wheeled_robot.h"
+#include "wheeled_robot.h"
 #include <cmath>
 #include <iostream>
 #include <utility>
@@ -22,7 +22,7 @@ void RWA2::WheeledRobot::brake() {
 
 void RWA2::WheeledRobot::rotate(double angle) {
   orientation_ += angle;
-  std::cout << "\nRotating " << model_ << " to " << orientation_ << " degrees."
+  std::cout << "\nRotating " << model_ << " to " << orientation_ << "degrees."
             << std::endl;
 }
 

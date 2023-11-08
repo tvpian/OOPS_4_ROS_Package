@@ -1,4 +1,4 @@
-#include "../include/legged_robot.h"
+#include "legged_robot.h"
 
 void RWA2::LeggedRobot::move(double distance, double angle) {
   rotate(angle);
@@ -19,7 +19,7 @@ void RWA2::LeggedRobot::print_Status() {
 }
 void RWA2::LeggedRobot::rotate(double angle) {
   orientation_ += angle;
-  std::cout << "\nRotating " << model_ << " to " << orientation_ << " degrees."
+  std::cout << "\nRotating " << model_ << " to " << orientation_ << "degrees."
             << std::endl;
 }
 void RWA2::LeggedRobot::jump(double amount) {

@@ -1,7 +1,7 @@
 // Define an abstract class for a mobile robot
 // Date: 04/01/2021
 
-#include "../include/mobile_robot.h"
+#include "mobile_robot.h"
 #include <cmath>
 
 void RWA2::MobileRobot::rotate(double angle) {

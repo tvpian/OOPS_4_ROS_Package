@@ -1,6 +1,6 @@
-#include "legged_robot.cpp"
-#include "mobile_robot.cpp"
-#include "wheeled_robot.cpp"
+#include "legged_robot.h"
+#include "mobile_robot.h"
+#include "wheeled_robot.h"
 
 int main() {
   RWA2::MobileRobot robot(0.0, 0.0, 0.0, 0.0, "R2D2");
@@ -13,8 +13,8 @@ int main() {
   wheeled_robot.move(10.0, 90.0);
   wheeled_robot.print_Status();
 
-  // RWA2::LeggedRobot legged_robot(0.0, 0.0, 0.0, 0.0, "R2D6", 1.0, 1, 2);
-  //   legged_robot.print_Status();
-  //   legged_robot.move(10.0, 90.0);
-  //   legged_robot.print_Status();
+  RWA2::LeggedRobot legged_robot(0.0, 0.0, 0.0, 0.0, "R2D6", 1.0, 1, 2);
+  legged_robot.print_Status();
+  legged_robot.move(10.0, 90.0);
+  legged_robot.print_Status();
 }

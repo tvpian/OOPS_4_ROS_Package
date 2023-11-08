@@ -4,7 +4,7 @@
       "name": "linux-gcc-x64",
       "includePath": [
         "${workspaceFolder}/**",
-        "/home/tvp/TVP/Coursework/Fall2023/ENPM809Y/RWA2-Group6/**"
+        "/home/tvp/TVP/Coursework/Fall2023/ENPM809Y/RWA2-Group6/include/**"
       ],
       "defines": [],
       "compilerPath": "/usr/bin/gcc",
