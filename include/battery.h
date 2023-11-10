@@ -14,6 +14,7 @@ public:
     explicit Battery(const std::string& model, int initial_charge = 100);
     void start_charging();
     void discharge(double amount);
+    int get_current_charge() const;
 };
 
 } // namespace RWA2
