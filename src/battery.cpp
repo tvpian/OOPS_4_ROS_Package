@@ -31,4 +31,8 @@ void Battery::stop_charging() {
     std::cout << "Battery " << model_ << " is fully charged." << std::endl;
 }
 
+int Battery::get_current_charge() const {
+    return current_charge_;
+
+}
 } // namespace RWA2
