@@ -48,20 +48,25 @@ void RWA2::AerialRobot::land() {
 
 //AerialRobot::<model_> rotated <angle> degrees.
 void RWA2::AerialRobot::rotate(double angle)  {
+  // Call the base class rotate method
+  MobileRobot::rotate(angle);
   std::cout << "\nLeggedRobot::" << model_ << "rotated " << angle << " degrees." << std::endl;
 }
 
 void RWA2::AerialRobot::move(double distance, double angle) {
+  std::cout << "----------------------------------------" << std::endl;
+  std::cout << "AerialRobot::" << model_ << " in action." << std::endl;
   // Maximum distance that can be travelled is 50 m
   if (distance > 50.0) {
     std::cout << "\nDistance exceeds maximum limit of 50 m." << std::endl;
+    std::cout << "AerialRobot::" << model_ << " would not move." << std::endl;
     return;
   }
   // For every 1m, the robot requires 2% battery
   //Assuming total distance travelled is summation of reaching the altitude and coming back(altitude X2)
   double battery_required = distance*2*2;
   // Check if the battery is sufficient
-  while(battery_.get_current_charge() < battery_required){
+  if(battery_.get_current_charge() < battery_required){
     std::cout << "\nInsufficient battery to move " << model_ << " by "
               << distance << " m." << std::endl;
     std::cout << "Charging " << model_ << "..." << std::endl;
@@ -70,14 +75,17 @@ void RWA2::AerialRobot::move(double distance, double angle) {
   }
 
   // If battery is sufficient, call the read_data method of the sensor
-  // to read the data from the sensor
-  std::cout << "----------------------------------------" << std::endl;
-  std::cout << "AerialRobot::" << model_ << " in action." << std::endl;
+  // to read the data from each sensor in the vector sensors_
+
   get_sensor_Values(5);  // Rotate the robot by the specified angle
   take_off(distance/2);
   rotate(angle);
   land();
   std::cout << model_ << "  reached an altitude of " << distance << " m." << std::endl;
+
+    // Discharge the battery
+  battery_.discharge(battery_required);
+
   // Print the status of the robot
   print_Status();
 }
@@ -91,4 +99,6 @@ void RWA2::AerialRobot::print_Status()  {
   std::cout << "Has wings: " << has_wings_ << std::endl;
   std::cout << "Altitude: " << altitude_ << std::endl;
   std::cout << "Is flying: " << is_flying_ << std::endl;
+  std::cout << "Battery charge: " << battery_.get_current_charge() << std::endl;
+  std::cout << std::endl;
 }

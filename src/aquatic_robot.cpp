@@ -48,20 +48,25 @@ void RWA2::AquaticRobot::surface() {
 
 //AquaticRobot::<model_> rotated <angle> degrees.
 void RWA2::AquaticRobot::rotate(double angle)  {
+  // Call the base class rotate method
+  MobileRobot::rotate(angle);
   std::cout << "\nLeggedRobot::" << model_ << "rotated " << angle << " degrees." << std::endl;
 }
 
 void RWA2::AquaticRobot::move(double distance, double angle) {
+  std::cout << "----------------------------------------" << std::endl;
+  std::cout << "AquaticRobot::" << model_ << " in action." << std::endl;
   // Maximum distance that can be travelled is 100 m
   if (distance > 100.0) {
     std::cout << "\nDistance exceeds maximum limit of 100 m." << std::endl;
+    std::cout << "AquaticRobot::" << model_ << " would not move." << std::endl;
     return;
   }
   // For every 1m, the robot requires 1% battery
   //Assuming distance travelled is summation of reaching the depth and coming back(depth X2)
   double battery_required = distance*2;
   // Check if the battery is sufficient
-  while(battery_.get_current_charge() < battery_required){
+  if(battery_.get_current_charge() < battery_required){
     std::cout << "\nInsufficient battery to move " << model_ << " by "
               << distance << " m." << std::endl;
     std::cout << "Charging " << model_ << "..." << std::endl;
@@ -70,14 +75,15 @@ void RWA2::AquaticRobot::move(double distance, double angle) {
   }
 
   // If battery is sufficient, call the read_data method of the sensor
-  // to read the data from the sensor
-  std::cout << "----------------------------------------" << std::endl;
-  std::cout << "AquaticRobot::" << model_ << " in action." << std::endl;
-  get_sensor_Values(5);  // Rotate the robot by the specified angle
-    rotate(angle);
+  // to read the data from each sensor in the vector sensors_
+  get_sensor_Values(5);
+  // Rotate the robot by the specified angle
+  rotate(angle);
   dive(distance/2);
   surface();
   std::cout << model_ << "  reached an depth of " << distance << " m." << std::endl;
+  // Discharge the battery
+  battery_.discharge(battery_required);
   // Print the status of the robot
   print_Status();
 }
@@ -91,4 +97,6 @@ void RWA2::AquaticRobot::print_Status()  {
   std::cout << "Has fins: " << has_fins_ << std::endl;
   std::cout << "depth: " << depth_ << std::endl;
   std::cout << "Is diving: " << is_diving_ << std::endl;
+  std::cout << "Battery charge: " << battery_.get_current_charge() << std::endl;
+
 }
