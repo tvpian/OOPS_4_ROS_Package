@@ -8,7 +8,10 @@
                 "-std=c++17",
                 "-fdiagnostics-color=always",
                 "-pedantic-errors",
+                "-I",
+                "/home/tvp/TVP/Coursework/Fall2023/ENPM809Y/RWA2-Group6/include",
                 "-g",
+                "/home/tvp/TVP/Coursework/Fall2023/ENPM809Y/RWA2-Group6/src/*.cpp",
                 "${file}",
                 "-o",
                 "${fileDirname}/${fileBasenameNoExtension}"
