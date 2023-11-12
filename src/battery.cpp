@@ -11,8 +11,8 @@ void Battery::start_charging() {
   if (!is_charging_) {
     is_charging_ = true;
     std::cout << "Battery " << model_ << " is charging." << std::endl;
-    int charge_time = (model_ == "Li-ion") ? (100 - current_charge_) * 7 / 100
-                                           : (100 - current_charge_) * 35 / 100;
+    int charge_time = (model_ == "Li-ion") ? (100 - current_charge_) * 0.5
+                                           : (100 - current_charge_) * 0.25;
 
     std::this_thread::sleep_for(std::chrono::seconds(charge_time));
     current_charge_ = 100;

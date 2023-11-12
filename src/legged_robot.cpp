@@ -32,12 +32,15 @@ void RWA2::LeggedRobot::rotate(double angle) {
 }
 
 void RWA2::LeggedRobot::move(double distance, double angle) {
+
+  std::cout << "----------------------------------------" << std::endl;
+  std::cout << "LeggedRobot::" << model_ << " in action." << std::endl;
   // The maximum value for distance is 10 m
   if (distance > 10) {
     std::cout << "\nDistance cannot be greater than 10 m." << std::endl;
+    std::cout << "LeggedRobot::" << model_ << " would not move." << std::endl;
     return;
   }
-
   // For every 1cm of height, the robot requires 1% battery
   // and for every 1m of distance, the robot requires 1% battery
   double battery_required = height_ * 100 + leg_strength_;
@@ -51,8 +54,6 @@ void RWA2::LeggedRobot::move(double distance, double angle) {
   }
   // If battery is sufficient, call the read_data method of the sensor
   // to read the data from the sensor
-  std::cout << "----------------------------------------" << std::endl;
-  std::cout << "LeggedRobot::" << model_ << " in action." << std::endl;
   get_sensor_Values(5);
   // Rotate the robot by the specified angle
   rotate(angle);

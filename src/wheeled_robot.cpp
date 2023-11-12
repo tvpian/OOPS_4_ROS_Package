@@ -39,9 +39,12 @@ void RWA2::WheeledRobot::rotate(double angle) {
 }
 
 void RWA2::WheeledRobot::move(double distance, double angle) {
+  std::cout << "----------------------------------------" << std::endl;
+  std::cout << "WheeledRobot::" << model_ << " in action." << std::endl;
   // Maximum distance that can be travelled is 100 m
   if (distance > 100) {
     std::cout << "\nDistance cannot be greater than 100 m." << std::endl;
+    std::cout << "WheeledRobot::" << model_ << " would not move." << std::endl;
     return;
   }
   // For every 1m, the robot requires 1% battery
@@ -56,8 +59,6 @@ void RWA2::WheeledRobot::move(double distance, double angle) {
   }
   // If battery is sufficient, call the get_sensor_Values method of the sensor
   // to read the data from each sensor in the vector sensors_
-  std::cout << "----------------------------------------" << std::endl;
-  std::cout << "WheeledRobot::" << model_ << " in action." << std::endl;
   get_sensor_Values(5);
   // Rotate the robot by the specified angle
   rotate(angle);
