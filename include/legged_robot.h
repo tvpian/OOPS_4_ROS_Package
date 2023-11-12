@@ -65,6 +65,8 @@ public:
       leg_strength_ = 5;
       number_of_legs_ = 4;
     }
+    // Add a sensor to the robot
+    add_Sensor(std::make_unique<RWA2::Sensor>("OSDome"));
   }
 
 protected:
