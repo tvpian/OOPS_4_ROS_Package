@@ -13,13 +13,15 @@ void RWA2::AerialRobot::take_off(double altitude) {
     }
 
     is_flying_=true;
+    std::cout << "\nThe robot is taking off... ";
+
     if(has_wings_){
         std::this_thread::sleep_for(std::chrono::milliseconds(int(altitude*1000/3)));
-        std::cout << "\nThe robot with  wings reached the altitude of " << altitude<<"in"<<altitude/3<< "seconds @3m/s.\n";
+        std::cout << "\nThe robot with  wings reached the altitude of " << altitude<<" in "<<altitude/3<< "seconds @3m/s.\n";
     }
     else {
         std::this_thread::sleep_for(std::chrono::milliseconds(int(altitude_*1000/1.5)));
-        std::cout << "\nThe robot with no wings reached the altitude of " << altitude <<"in"<<altitude/1.5<< "seconds @1.5m/s.\n";
+        std::cout << "\nThe robot with no wings reached the altitude of " << altitude <<" in "<<altitude/1.5<< "seconds @1.5m/s.\n";
     }
     altitude_=altitude;
 }
@@ -31,14 +33,14 @@ void RWA2::AerialRobot::land() {
         std::cout << "\nThe robot is not flying! Abort!" << std::endl;
         return;
     }
-
+    std::cout << "\nThe robot is landing... ";
     if(has_wings_){
         std::this_thread::sleep_for(std::chrono::milliseconds(int(altitude_*1000/4)));
-        std::cout << "\nThe robot with  wings landed from the altitude of " << altitude_ <<"in"<<altitude_/4<< "seconds @4m/s.\n";
+        std::cout << "\nThe robot with  wings landed from the altitude of " << altitude_ <<" in "<<altitude_/4<< "seconds @4m/s.\n";
     }
     else {
         std::this_thread::sleep_for(std::chrono::milliseconds(int(altitude_*1000/1.5)));
-        std::cout << "\nThe robot with no wings landed from the altitude of " << altitude_ <<"in"<<altitude_/2<< "seconds @2m/s.\n";
+        std::cout << "\nThe robot with no wings landed from the altitude of " << altitude_ <<" in "<<altitude_/2<< "seconds @2m/s.\n";
     }
 
     is_flying_=false;
@@ -50,7 +52,7 @@ void RWA2::AerialRobot::land() {
 void RWA2::AerialRobot::rotate(double angle)  {
   // Call the base class rotate method
   MobileRobot::rotate(angle);
-  std::cout << "\nLeggedRobot::" << model_ << "rotated " << angle << " degrees." << std::endl;
+  std::cout << "\nLeggedRobot:: " << model_ << " rotated " << angle << " degrees." << std::endl;
 }
 
 void RWA2::AerialRobot::move(double distance, double angle) {
@@ -78,10 +80,15 @@ void RWA2::AerialRobot::move(double distance, double angle) {
   // to read the data from each sensor in the vector sensors_
 
   get_sensor_Values(5);  // Rotate the robot by the specified angle
+  // Call the take_off method with distance/2 as the parameter
   take_off(distance/2);
+  // Call the function rotate
   rotate(angle);
   land();
-  std::cout << model_ << "  reached an altitude of " << distance << " m." << std::endl;
+  //the instruction asked to Print: <model_> reached an altitude of <distance> meters and then landed.
+  //but the take off was distance/2. Hence reached an altitude of distance/2. Both the lines are contradicting!
+  //**updated reached an altitude of <distance/2>
+  std::cout << model_ << " reached an altitude of " << distance/2 << " meters and then landed." << std::endl;
 
     // Discharge the battery
   battery_.discharge(battery_required);
