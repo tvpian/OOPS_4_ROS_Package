@@ -4,6 +4,10 @@
 #include <utility>
 
 namespace RWA2 {
+/**
+ * @brief Class to represent the wheeled robot
+ *
+ */
 class WheeledRobot final : public MobileRobot {
 private:
   int number_of_wheels_{2};
@@ -70,6 +74,5 @@ protected:
    * @param angle // angle to rotate
    */
   void rotate(double angle) override;
-};
-
+}; // end of class WheeledRobot
 } // namespace RWA2

@@ -5,6 +5,10 @@
 #include <utility>
 
 namespace RWA2 {
+/**
+ * @brief Class to represent the legged robot
+ *
+ */
 class LeggedRobot final : public MobileRobot {
 private:
   double height_;
@@ -70,5 +74,5 @@ protected:
    * @param angle // angle to rotate
    */
   void rotate(double angle) override;
-}; // namespace RWA2
+}; // end of class LeggedRobot
 } // namespace RWA2

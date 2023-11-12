@@ -1,17 +1,24 @@
 #include "legged_robot.h"
 #include "mobile_robot.h"
 #include "wheeled_robot.h"
+#include <memory>
+#include <vector>
 
 int main() {
-  RWA2::MobileRobot robot(0.0, 0.0, 0.0, 0.0, "Mobile Robot", "Mobile Robot Sensor", "Mobile Robot Battery", 100);
-  robot.move(2.0, 90.0);
-  robot.print_Status();
-
-  RWA2::LeggedRobot legged_robot(0.0, 0.0, 0.0, 0.0, "Legged Robot", "Legged Robot Sensor", "Legged Robot Battery", 100, 0.5, 100, 2);
-  legged_robot.move(2.0, 90.0);
-  legged_robot.print_Status();
-
-  RWA2::WheeledRobot wheeled_robot(0.0, 0.0, 0.0, 0.0, "Wheeled Robot", "Wheeled Robot Sensor", "Wheeled Robot Battery", 100, 4, 0.5, 10.0);
-  wheeled_robot.move(2.0, 90.0);
-  wheeled_robot.print_Status();
+  auto wheeled_robot = std::make_unique<RWA2::WheeledRobot>(
+      0.0, 0.0, 0.0, 0.0, "Turtlebot", "Lithium", 100, 10);
+  // Add a sensor to the robot
+  wheeled_robot->add_Sensor(std::make_unique<RWA2::Sensor>("Lidar"));
+  // Add another sensor to the robot
+  wheeled_robot->add_Sensor(std::make_unique<RWA2::Sensor>("Camera"));
+  wheeled_robot->move(5, 90.0);
+  auto legged_robot = std::make_unique<RWA2::LeggedRobot>(
+      0.0, 0.0, 0.0, 0.0, "Atlas", "Lithium", 300, 0.5);
+  // Add a sensor to the robot
+  legged_robot->add_Sensor(std::make_unique<RWA2::Sensor>("Lidar"));
+  // Add another sensor to the robot
+  legged_robot->add_Sensor(std::make_unique<RWA2::Sensor>("Camera"));
+  legged_robot->move(5.0, 90.0);
+  legged_robot->move(1.0, 340.0);
+  return 0;
 }

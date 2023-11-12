@@ -6,7 +6,10 @@
 #include <vector>
 
 namespace RWA2 {
-
+/**
+ * @brief Class to represent the mobile robot
+ *
+ */
 class MobileRobot {
 public:
   MobileRobot(double x, double y, double orientation, double speed,
@@ -30,5 +33,5 @@ protected:
   RWA2::Battery battery_;
   // Create a vector of unique pointers to Sensor objects
   std::vector<std::unique_ptr<RWA2::Sensor>> sensors_;
-};
+}; // end of class MobileRobot
 } // namespace RWA2
