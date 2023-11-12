@@ -1,5 +1,0 @@
-<map id="RWA2::AerialRobot" name="RWA2::AerialRobot">
-<area shape="rect" id="node1" title="Class to represent the aerial robot." alt="" coords="8,171,153,197"/>
-<area shape="rect" id="node2" href="$classRWA2_1_1MobileRobot.html" title="Class to represent the mobile robot." alt="" coords="5,95,156,121"/>
-<area shape="rect" id="node3" href="$classRWA2_1_1Battery.html" title="Class to represent the battery of the robot." alt="" coords="22,5,139,32"/>
-</map>
