@@ -15,11 +15,11 @@ void RWA2::AerialRobot::take_off(double altitude) {
     is_flying_=true;
     if(has_wings_){
         std::this_thread::sleep_for(std::chrono::milliseconds(int(altitude*1000/3)));
-        std::cout << "\nThe robot with  wings reached the altitude of " << altitude<<"in"<<altitude*1000/3<< "seconds @3m/s.\n";
+        std::cout << "\nThe robot with  wings reached the altitude of " << altitude<<"in"<<altitude/3<< "seconds @3m/s.\n";
     }
     else {
         std::this_thread::sleep_for(std::chrono::milliseconds(int(altitude_*1000/1.5)));
-        std::cout << "\nThe robot with no wings reached the altitude of " << altitude <<"in"<<altitude*1000/1.5<< "seconds @1.5m/s.\n";
+        std::cout << "\nThe robot with no wings reached the altitude of " << altitude <<"in"<<altitude/1.5<< "seconds @1.5m/s.\n";
     }
     altitude_=altitude;
 }
@@ -34,11 +34,11 @@ void RWA2::AerialRobot::land() {
 
     if(has_wings_){
         std::this_thread::sleep_for(std::chrono::milliseconds(int(altitude_*1000/4)));
-        std::cout << "\nThe robot with  wings landed from the altitude of " << altitude_ <<"in"<<altitude_*1000/4<< "seconds @4m/s.\n";
+        std::cout << "\nThe robot with  wings landed from the altitude of " << altitude_ <<"in"<<altitude_/4<< "seconds @4m/s.\n";
     }
     else {
         std::this_thread::sleep_for(std::chrono::milliseconds(int(altitude_*1000/1.5)));
-        std::cout << "\nThe robot with no wings landed from the altitude of " << altitude_ <<"in"<<altitude_*1000/2<< "seconds @2m/s.\n";
+        std::cout << "\nThe robot with no wings landed from the altitude of " << altitude_ <<"in"<<altitude_/2<< "seconds @2m/s.\n";
     }
 
     is_flying_=false;
@@ -58,7 +58,8 @@ void RWA2::AerialRobot::move(double distance, double angle) {
     return;
   }
   // For every 1m, the robot requires 2% battery
-  double battery_required = distance*2;
+  //Assuming total distance travelled is summation of reaching the altitude and coming back(altitude X2)
+  double battery_required = distance*2*2;
   // Check if the battery is sufficient
   while(battery_.get_current_charge() < battery_required){
     std::cout << "\nInsufficient battery to move " << model_ << " by "
