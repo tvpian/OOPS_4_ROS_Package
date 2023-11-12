@@ -1,0 +1,7 @@
+<map id="RWA2::MobileRobot" name="RWA2::MobileRobot">
+<area shape="rect" id="node1" title="Class to represent the mobile robot." alt="" coords="267,5,417,32"/>
+<area shape="rect" id="node2" href="$classRWA2_1_1AerialRobot.html" title="Class to represent the aerial robot." alt="" coords="5,80,151,107"/>
+<area shape="rect" id="node3" href="$classRWA2_1_1AquaticRobot.html" title="Class to represent the aquatic robot." alt="" coords="175,80,331,107"/>
+<area shape="rect" id="node4" href="$classRWA2_1_1LeggedRobot.html" title="Class to represent the legged robot." alt="" coords="355,80,510,107"/>
+<area shape="rect" id="node5" href="$classRWA2_1_1WheeledRobot.html" title="Class to represent the wheeled robot." alt="" coords="535,80,699,107"/>
+</map>

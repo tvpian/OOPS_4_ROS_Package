@@ -1,0 +1,86 @@
+\hypertarget{classRWA2_1_1MobileRobot}{}\doxysection{R\+W\+A2\+::Mobile\+Robot Class Reference}
+\label{classRWA2_1_1MobileRobot}\index{RWA2::MobileRobot@{RWA2::MobileRobot}}
+
+
+Class to represent the mobile robot.  
+
+
+
+
+{\ttfamily \#include $<$mobile\+\_\+robot.\+h$>$}
+
+
+
+Inheritance diagram for R\+W\+A2\+::Mobile\+Robot\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classRWA2_1_1MobileRobot__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for R\+W\+A2\+::Mobile\+Robot\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=193pt]{classRWA2_1_1MobileRobot__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classRWA2_1_1MobileRobot_adc22c3da12be3e4fca63491ae0b2c9e7}\label{classRWA2_1_1MobileRobot_adc22c3da12be3e4fca63491ae0b2c9e7}} 
+{\bfseries Mobile\+Robot} (double x, double y, double orientation, double speed, std\+::string model, std\+::string battery\+\_\+model, int battery\+\_\+charge)
+\item 
+\mbox{\Hypertarget{classRWA2_1_1MobileRobot_a26473718b39fe26ad31f7588cdfdcd27}\label{classRWA2_1_1MobileRobot_a26473718b39fe26ad31f7588cdfdcd27}} 
+virtual void {\bfseries move} (double distance, double angle)=0
+\item 
+\mbox{\Hypertarget{classRWA2_1_1MobileRobot_ad908568cb7642beda28bdaa896ecbd5b}\label{classRWA2_1_1MobileRobot_ad908568cb7642beda28bdaa896ecbd5b}} 
+virtual void {\bfseries print\+\_\+\+Status} ()
+\item 
+\mbox{\Hypertarget{classRWA2_1_1MobileRobot_a7f6996a279dbc8ac3631fdc086f064ae}\label{classRWA2_1_1MobileRobot_a7f6996a279dbc8ac3631fdc086f064ae}} 
+void {\bfseries add\+\_\+\+Sensor} (std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{classRWA2_1_1Sensor}{R\+W\+A2\+::\+Sensor}} $>$ sensor)
+\item 
+\mbox{\Hypertarget{classRWA2_1_1MobileRobot_a1b64548d12002a74332aebc287b4f0c5}\label{classRWA2_1_1MobileRobot_a1b64548d12002a74332aebc287b4f0c5}} 
+void {\bfseries get\+\_\+sensor\+\_\+\+Values} (uint duration)
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classRWA2_1_1MobileRobot_a7192e732ac54984e67f2ad7729b17eaf}\label{classRWA2_1_1MobileRobot_a7192e732ac54984e67f2ad7729b17eaf}} 
+virtual void {\bfseries rotate} (double angle)
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classRWA2_1_1MobileRobot_a4109e48de9ca1ebff2e0034006329170}\label{classRWA2_1_1MobileRobot_a4109e48de9ca1ebff2e0034006329170}} 
+std\+::pair$<$ double, double $>$ {\bfseries position\+\_\+}
+\item 
+\mbox{\Hypertarget{classRWA2_1_1MobileRobot_a90aa9f846d2debcd8d54615d6850057e}\label{classRWA2_1_1MobileRobot_a90aa9f846d2debcd8d54615d6850057e}} 
+double {\bfseries orientation\+\_\+}
+\item 
+\mbox{\Hypertarget{classRWA2_1_1MobileRobot_ab30ac921ac2968d96cce167f9382280a}\label{classRWA2_1_1MobileRobot_ab30ac921ac2968d96cce167f9382280a}} 
+double {\bfseries speed\+\_\+} \{0.\+0\}
+\item 
+\mbox{\Hypertarget{classRWA2_1_1MobileRobot_a9279e49661eed20398b40437f983d5cb}\label{classRWA2_1_1MobileRobot_a9279e49661eed20398b40437f983d5cb}} 
+std\+::string {\bfseries model\+\_\+}
+\item 
+\mbox{\Hypertarget{classRWA2_1_1MobileRobot_aad2ad7ec3e4ff2db8ce069f8c390c3da}\label{classRWA2_1_1MobileRobot_aad2ad7ec3e4ff2db8ce069f8c390c3da}} 
+\mbox{\hyperlink{classRWA2_1_1Battery}{R\+W\+A2\+::\+Battery}} {\bfseries battery\+\_\+}
+\item 
+\mbox{\Hypertarget{classRWA2_1_1MobileRobot_a795a75b19ddc7de99e23d96cda20bb23}\label{classRWA2_1_1MobileRobot_a795a75b19ddc7de99e23d96cda20bb23}} 
+std\+::vector$<$ std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{classRWA2_1_1Sensor}{R\+W\+A2\+::\+Sensor}} $>$ $>$ {\bfseries sensors\+\_\+}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Class to represent the mobile robot. 
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+include/mobile\+\_\+robot.\+h\end{DoxyCompactItemize}
