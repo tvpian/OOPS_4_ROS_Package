@@ -24,6 +24,6 @@ public:
    *
    * @param duration // duration of the sensor reading
    */
-  * / void read_data(unsigned int duration);
+  void read_data(unsigned int duration);
 }; // end of class Sensor
 } // namespace RWA2
