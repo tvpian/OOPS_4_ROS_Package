@@ -71,8 +71,9 @@ void RWA2::AquaticRobot::move(double distance, double angle) {
 
   // If battery is sufficient, call the read_data method of the sensor
   // to read the data from the sensor
-  sensors_->read_data(5);
-  // Rotate the robot by the specified angle
+  std::cout << "----------------------------------------" << std::endl;
+  std::cout << "AquaticRobot::" << model_ << " in action." << std::endl;
+  get_sensor_Values(5);  // Rotate the robot by the specified angle
     rotate(angle);
   dive(distance/2);
   surface();
