@@ -23,5 +23,4 @@ void Sensor::read_data(unsigned int duration) {
     value = static_cast<double>(rand()) / (static_cast<double>(RAND_MAX / 30));
   }
 }
-
 } // namespace RWA2
