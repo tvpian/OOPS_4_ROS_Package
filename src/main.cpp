@@ -53,8 +53,12 @@ int main() {
   mobile_robots.push_back(std::move(aerial_robot_ptr));
   mobile_robots.push_back(std::move(aquatic_robot_ptr));
 
-  // Calling the move_robot function
+  // Calling the move_robot function - Case 1
   move_robot(mobile_robots, 2.0, 90.0);
+  // Calling the move_robot functio  - Case 2
+  move_robot(mobile_robots, 4.0, 45.0);
+  // Calling the move_robot function - Case 3
+  move_robot(mobile_robots, 6.0, 30.0);
 
   return 0;
 }

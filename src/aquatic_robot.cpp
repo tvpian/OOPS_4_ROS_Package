@@ -36,6 +36,8 @@ void RWA2::AquaticRobot::surface() {
     return;
   }
   std::cout << "\nThe robot is ascending to surface... ";
+  // If the robot has fins, it can surface at 4m/s
+  // If the robot has no fins, it can surface at 2m/s
   if (has_fins_) {
     std::this_thread::sleep_for(
         std::chrono::milliseconds(int(depth_ * 1000 / 4)));

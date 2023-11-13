@@ -38,7 +38,7 @@ void RWA2::LeggedRobot::move(double distance, double angle) {
     return;
   }
   // For every 1cm of height, the robot requires 1% battery
-  // and for every 1m of distance, the robot requires 1% battery
+  // and for every leg strength, the robot requires 1% battery
   double battery_required = height_ * 100 + leg_strength_;
   // Check if the battery is sufficient
   if (battery_.get_current_charge() < battery_required) {
