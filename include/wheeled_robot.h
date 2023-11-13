@@ -53,8 +53,8 @@ public:
       number_of_wheels_ = 2;
     }
 
-    // Add a sensor to the robot
-    add_Sensor(std::make_unique<RWA2::Sensor>("OSDome"));
+    // // Add a sensor to the robot
+    // add_Sensor(std::make_unique<RWA2::Sensor>("OSDome"));
   }
   /**
    * @brief Overriding function to move the wheeled robot

@@ -18,7 +18,6 @@ private:
   void land();
 
 public:
-
   /**
    * @brief Construct a new Legged Robot object
    *
@@ -33,22 +32,22 @@ public:
    */
 
   AerialRobot(double x, double y, double orientation, double speed,
-               std::string model, std::string battery_model, int battery_charge,
-               double altitude)
-      : MobileRobot(x, y, orientation, speed, model, battery_model, battery_charge), altitude_{altitude} {
-          // Assign the has fin based on the model
-          if (model_ == "Crazyflie") {
-            has_wings_ = false;
-          }
-          else if (model_ == "Erle-Plane") {
-            has_wings_ = true;
-          }
-          else {
-            std::cout << "\nUnknown model. Assuming the model is Crazyflie." << std::endl;
-            has_wings_ = false;
-          }
-
-        }
+              std::string model, std::string battery_model, int battery_charge,
+              double altitude)
+      : MobileRobot(x, y, orientation, speed, model, battery_model,
+                    battery_charge),
+        altitude_{altitude} {
+    // Assign the has fin based on the model
+    if (model_ == "Crazyflie") {
+      has_wings_ = false;
+    } else if (model_ == "Erle-Plane") {
+      has_wings_ = true;
+    } else {
+      std::cout << "\nUnknown model. Assuming the model is Crazyflie."
+                << std::endl;
+      has_wings_ = false;
+    }
+  }
 
   /**
    * @brief Overriding function to move the aerial robot
@@ -59,7 +58,7 @@ public:
 
   void move(double distance, double angle) override;
 
-    /**
+  /**
    * @brief Overriding function to print the status of the aerial robot
    *
    */
@@ -73,5 +72,5 @@ protected:
    * @param angle // angle to rotate
    */
   void rotate(double angle) override;
-};// end of class AquaticRobot
+}; // end of class AquaticRobot
 } // namespace RWA2
