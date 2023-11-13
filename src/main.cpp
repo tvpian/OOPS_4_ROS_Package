@@ -2,7 +2,10 @@
 #include "aquatic_robot.h"
 #include "legged_robot.h"
 #include "mobile_robot.h"
+#include "sensor.h"
 #include "wheeled_robot.h"
+
+#include <iostream>
 #include <memory>
 #include <vector>
 
