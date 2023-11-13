@@ -100,7 +100,6 @@
     "*.md": "vscode.markdown.preview.editor",
     "*.svg": "svgPreviewer.customEditor"
   },
-  "workbench.editor.untitled.hint": "hidden",
   "workbench.colorTheme": "Visual Studio Dark - C++",
   "git.enableSmartCommit": true,
   "git.autofetch": true,
@@ -248,6 +247,7 @@
 "code-runner.defaultLanguage": "c++",
 "C_Cpp.default.intelliSenseMode": "linux-gcc-x64",
 "vsintellicode.features.python.deepLearning": "enabled",
+"workbench.editor.empty.hint": "hidden",
 
 
 
