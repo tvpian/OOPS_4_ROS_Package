@@ -56,7 +56,7 @@ void RWA2::AquaticRobot::surface() {
 void RWA2::AquaticRobot::rotate(double angle) {
   // Call the base class rotate method
   MobileRobot::rotate(angle);
-  std::cout << "\nLeggedRobot:: " << model_ << " rotated " << angle
+  std::cout << "\nAquaticRobot:: " << model_ << " rotated " << angle
             << " degrees." << std::endl;
 }
 
