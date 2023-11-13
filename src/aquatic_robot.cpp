@@ -104,11 +104,7 @@ void RWA2::AquaticRobot::move(double distance, double angle) {
 }
 
 void RWA2::AquaticRobot::print_Status() {
-  std::cout << "\nStatus of " << model_ << ":" << std::endl;
-  std::cout << "Position: " << position_.first << ", " << position_.second
-            << std::endl;
-  std::cout << "Orientation: " << orientation_ << std::endl;
-  std::cout << "Speed: " << speed_ << std::endl;
+  MobileRobot::print_Status();
   std::cout << "Has fins: " << has_fins_ << std::endl;
   std::cout << "depth: " << depth_ << std::endl;
   std::cout << "Is diving: " << is_diving_ << std::endl;

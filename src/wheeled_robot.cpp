@@ -79,11 +79,7 @@ void RWA2::WheeledRobot::move(double distance, double angle) {
 }
 
 void RWA2::WheeledRobot::print_Status() {
-  std::cout << "\nStatus of " << model_ << ":" << std::endl;
-  std::cout << "Position: " << position_.first << ", " << position_.second
-            << std::endl;
-  std::cout << "Orientation: " << orientation_ << std::endl;
-  std::cout << "Speed: " << speed_ << std::endl;
+  MobileRobot::print_Status();
   std::cout << "Number of wheels: " << number_of_wheels_ << std::endl;
   std::cout << "Wheel diameter: " << wheel_diameter_ << std::endl;
   std::cout << "Desired speed: " << desired_speed_ << std::endl;

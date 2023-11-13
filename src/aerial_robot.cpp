@@ -106,11 +106,7 @@ void RWA2::AerialRobot::move(double distance, double angle) {
 }
 
 void RWA2::AerialRobot::print_Status() {
-  std::cout << "\nStatus of " << model_ << ":" << std::endl;
-  std::cout << "Position: " << position_.first << ", " << position_.second
-            << std::endl;
-  std::cout << "Orientation: " << orientation_ << std::endl;
-  std::cout << "Speed: " << speed_ << std::endl;
+  MobileRobot::print_Status();
   std::cout << "Has wings: " << has_wings_ << std::endl;
   std::cout << "Altitude: " << altitude_ << std::endl;
   std::cout << "Is flying: " << is_flying_ << std::endl;
