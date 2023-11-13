@@ -18,6 +18,7 @@ private:
   void surface();
 
 public:
+
   /**
    * @brief Construct a new Legged Robot object
    *
@@ -34,21 +35,20 @@ public:
   AquaticRobot(double x, double y, double orientation, double speed,
                std::string model, std::string battery_model, int battery_charge,
                double depth)
-      : MobileRobot(x, y, orientation, speed, model, battery_model,
-                    battery_charge),
-        depth_{depth} {
+      : MobileRobot(x, y, orientation, speed, model, battery_model, battery_charge), depth_{depth} {
 
-    // Assign the has fin based on the model
-    if (model_ == "HoloOcean") {
-      has_fins_ = false;
-    } else if (model_ == "SoFi") {
-      has_fins_ = true;
-    } else {
-      std::cout << "\nUnknown model. Assuming the model is HoloOcean."
-                << std::endl;
-      has_fins_ = false;
-    }
-  }
+          // Assign the has fin based on the model
+          if (model_ == "HoloOcean") {
+            has_fins_ = false;
+          }
+          else if (model_ == "SoFi") {
+            has_fins_ = true;
+          }
+          else {
+            std::cout << "\nUnknown model. Assuming the model is HoloOcean." << std::endl;
+            has_fins_ = false;
+          }
+        }
 
   /**
    * @brief Overriding function to move the aquatic robot
@@ -71,5 +71,5 @@ protected:
    * @param angle // angle to rotate
    */
   void rotate(double angle) override;
-}; // end of class AquaticRobot
+};// end of class AquaticRobot
 } // namespace RWA2
