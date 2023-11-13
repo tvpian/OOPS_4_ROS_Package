@@ -70,6 +70,12 @@ public:
    */
   void print_Status() override;
 
+  /**
+   * @brief Destroy the Wheeled Robot object
+   *
+   */
+  ~WheeledRobot() { std::cout << model_ << " is destroyed." << std::endl; }
+
 protected:
   /**
    * @brief Overriding function to rotate the wheeled robot

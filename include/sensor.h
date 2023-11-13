@@ -25,5 +25,10 @@ public:
    * @param duration // duration of the sensor reading
    */
   void read_data(unsigned int duration);
+  /**
+   * @brief Destroy the Sensor object
+   *
+   */
+  ~Sensor() = default;
 }; // end of class Sensor
 } // namespace RWA2

@@ -68,6 +68,11 @@ public:
     // // Add a sensor to the robot
     // add_Sensor(std::make_unique<RWA2::Sensor>("OSDome"));
   }
+  /**
+   * @brief Destroy the Legged Robot object
+   *
+   */
+  ~LeggedRobot() { std::cout << model_ << " is destroyed." << std::endl; }
 
 protected:
   /**

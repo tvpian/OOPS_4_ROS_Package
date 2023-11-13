@@ -14,6 +14,7 @@ void move_robot(const std::vector<std::unique_ptr<RWA2::MobileRobot>> &robots,
   for (const auto &robot : robots) {
     robot->move(distance, angle);
   }
+  std::cout << "\n";
 }
 
 int main() {

@@ -43,5 +43,11 @@ public:
    * @return int // current charge of the battery
    */
   int get_current_charge() const;
+
+  /**
+   * @brief Destroy the Battery object
+   *
+   */
+  ~Battery() = default;
 }; // end of class Battery
 } // namespace RWA2

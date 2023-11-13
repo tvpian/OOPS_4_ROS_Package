@@ -65,6 +65,9 @@ public:
 
   void print_Status() override;
 
+  // Add destructor method
+  ~AerialRobot() { std::cout << model_ << " is destroyed." << std::endl; }
+
 protected:
   /**
    * @brief Overriding function to rotate the aquatic robot

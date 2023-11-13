@@ -64,6 +64,12 @@ public:
    */
   void print_Status() override;
 
+  /**
+   * @brief Destroy the Aquatic Robot object
+   *
+   */
+  ~AquaticRobot() { std::cout << model_ << " is destroyed." << std::endl; }
+
 protected:
   /**
    * @brief Overriding function to rotate the aquatic robot
