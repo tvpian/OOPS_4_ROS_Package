@@ -1,7 +1,7 @@
 # OOP Implementation of the S/W Architecture for Mobile Robots 
 
 ## Introduction
-This project is an implementation of OOPs in the domain of mobile robots. The following are the classes that are implemented in this project:
+This project is an implementation of Object Oriented Programming(OOP) for defining the software architecture for mobile robots. The following are the classes that are implemented in this project:
 * mobile_robot - Base class
 * wheeled_robot - Derived class
 * legged_robot - Derived class
