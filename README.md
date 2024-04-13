@@ -1,4 +1,4 @@
-# Mobile Robot OOPs Implementation
+# OOP Implementation of the S/W Architecture for Mobile Robots 
 
 ## Introduction
 This project is an implementation of OOPs in the domain of mobile robots. The following are the classes that are implemented in this project:
