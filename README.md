@@ -14,3 +14,7 @@ This project is an implementation of Object Oriented Programming(OOP) for defini
 * Navigate to the directory where the code is present.
 * Run the following commands:
 ./main
+  ```bash
+  cd src/
+  ./main
+  ```
