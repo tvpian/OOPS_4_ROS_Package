@@ -14,8 +14,7 @@ This project is an implementation of Object Oriented Programming(OOP) for defini
 
 ## Instructions to run the code
 * Navigate to the directory where the code is present.
-* Run the following commands to get view a simulation of implemented architecture.
-./main
+* Run the following commands to get view a simulation of implemented architecture:
   ```bash
   cd src/
   ./main
