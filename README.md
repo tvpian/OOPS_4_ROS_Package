@@ -9,6 +9,8 @@ This project is an implementation of Object Oriented Programming(OOP) for defini
 * aerial_robot - Derived class
 * battery - has-a relationship with the base class
 * sensor - has-a relationship with the base class
+![Screenshot from 2024-04-13 19-28-42](https://github.com/tvpian/OOPS_4_Robots_Package/assets/41953267/fc36ec8e-d7c0-47e2-84f3-8b1aa091d2b8)
+
 
 ## Instructions to run the code
 * Navigate to the directory where the code is present.
